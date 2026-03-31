@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Eleanor M. Hartley</title>
+  <title>Nicholas D.E. Mark</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,33 +43,37 @@
     .kicker { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 2rem; }
 
     .section { margin-bottom: 3.5rem; }
-    .section-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); border-top: 0.5px solid var(--rule-strong); padding-top: 0.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; }
+    .section-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); border-top: 0.5px solid var(--rule-strong); padding-top: 0.5rem; margin-bottom: 1.5rem; }
 
     .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
     .portrait-placeholder { background: var(--surface); border: 0.5px solid var(--rule-strong); aspect-ratio: 3/4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 2px; }
     .portrait-placeholder svg { opacity: 0.25; }
     .portrait-placeholder span { font-family: var(--mono); font-size: 0.6rem; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
 
-    /* Replace .portrait-placeholder with an <img> tag like so:
-       <img src="photo.jpg" alt="Your Name" style="width:100%; border-radius:2px; display:block;" /> */
-
     .about-body p { font-size: 1.1rem; line-height: 1.75; color: var(--ink); margin-bottom: 1rem; }
     .about-body p:first-child::first-letter { font-size: 3rem; line-height: 0.8; float: left; margin-right: 0.1em; margin-top: 0.12em; font-style: italic; }
+
     .contact-strip { margin-top: 1.5rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); font-family: var(--mono); font-size: 0.65rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.35rem; letter-spacing: 0.04em; }
     .contact-strip a { color: var(--muted); text-decoration: none; }
     .contact-strip a:hover { color: var(--ink); }
+    .contact-strip .label { color: var(--faint); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
+
+    .areas { margin-top: 1.2rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
+    .areas-label { font-family: var(--mono); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 0.4rem; }
+    .areas-list { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
 
     .pub-list { list-style: none; }
     .pub-item { padding: 1.1rem 0; border-bottom: 0.5px solid var(--rule); display: grid; grid-template-columns: auto 1fr; gap: 0 1.5rem; }
-    .pub-year { font-family: var(--mono); font-size: 0.7rem; color: var(--faint); padding-top: 0.2rem; min-width: 2.8rem; }
-    .pub-title { font-size: 1.05rem; line-height: 1.45; color: var(--ink); font-style: italic; margin-bottom: 0.25rem; }
+    .pub-num { font-family: var(--mono); font-size: 0.68rem; color: var(--faint); padding-top: 0.2rem; min-width: 1.8rem; text-align: right; }
+    .pub-title { font-size: 1.02rem; line-height: 1.45; color: var(--ink); font-style: italic; margin-bottom: 0.25rem; }
     .pub-meta { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
     .pub-meta em { font-style: normal; color: var(--ink); }
     .pub-tag { display: inline-block; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; border: 0.5px solid var(--rule-strong); border-radius: 1px; padding: 1px 5px; color: var(--faint); margin-left: 0.5rem; vertical-align: middle; }
+    .pub-tag.forthcoming { border-color: var(--muted); color: var(--muted); }
 
     .cv-section { margin-bottom: 2rem; }
     .cv-section-title { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 0.8rem; }
-    .cv-row { display: grid; grid-template-columns: 5rem 1fr; gap: 0 1.5rem; margin-bottom: 0.65rem; font-size: 0.92rem; line-height: 1.5; }
+    .cv-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 1.5rem; margin-bottom: 0.65rem; font-size: 0.92rem; line-height: 1.5; }
     .cv-row-year { font-family: var(--mono); font-size: 0.68rem; color: var(--faint); padding-top: 0.15rem; }
     .cv-row-body { color: var(--ink); }
     .cv-row-body small { display: block; color: var(--muted); font-size: 0.82rem; }
@@ -94,7 +98,7 @@
 <div class="site">
 
   <header class="masthead">
-    <div class="masthead-name">Dr. Eleanor M. Hartley</div>
+    <div class="masthead-name">Nicholas D.E. Mark</div>
     <nav class="masthead-nav">
       <a class="active" onclick="showPage('about', this)">About</a>
       <a onclick="showPage('publications', this)">Publications</a>
@@ -104,7 +108,7 @@
 
   <!-- ABOUT -->
   <div id="about" class="page visible">
-    <div class="kicker">Associate Professor &nbsp;·&nbsp; Department of History &nbsp;·&nbsp; University of Westbrook</div>
+    <div class="kicker">Assistant Professor &nbsp;·&nbsp; Department of Sociology &nbsp;·&nbsp; University of Wisconsin–Madison</div>
     <div class="section">
       <div class="about-grid">
         <div>
@@ -116,17 +120,25 @@
             <span>photo</span>
           </div>
           <div class="contact-strip">
-            <a href="mailto:e.hartley@westbrook.edu">e.hartley@westbrook.edu</a>
-            <span>Merritt Hall 214</span>
-            <span>Office hours: Tue &amp; Thu, 2–4 pm</span>
-            <a href="#">Google Scholar</a>
-            <a href="#">ORCID</a>
+            <span class="label">Contact</span>
+            <a href="mailto:nmark3@wisc.edu">nmark3@wisc.edu</a>
+            <a href="tel:+16082628515">(608) 262-8515</a>
+            <span>4456 Sewell Social Sciences Building</span>
+            <span>Madison, WI 53706</span>
+            <span class="label">Affiliations</span>
+            <a href="#">Center for Demography and Ecology</a>
+            <a href="#">Center for Demography of Health and Aging</a>
+            <a href="#">Interdisciplinary Training Program</a>
+          </div>
+          <div class="areas">
+            <div class="areas-label">Research Areas</div>
+            <div class="areas-list">Demography &amp; Ecology · Social Stratification · Family · Methods &amp; Statistics · Education · Aging &amp; the Life Course</div>
           </div>
         </div>
         <div class="about-body">
-          <p>My research sits at the intersection of twentieth-century intellectual history and the politics of knowledge production. I am interested in how ideas about expertise, objectivity, and authority have been contested across the humanities and social sciences—and what those contests reveal about the deeper fault lines of modern life.</p>
-          <p>My first book, <em>The Uncertain Archive</em> (University of Westbrook Press, 2021), examined how mid-century sociologists navigated the divide between empirical rigour and normative commitment. It received the Braudel Prize for outstanding first monograph in historical sociology.</p>
-          <p>I am currently completing a second book, tentatively titled <em>Credibility and Its Discontents</em>, which traces how the concept of the expert witness moved from courtrooms into public discourse between 1945 and 1985. I hold a DPhil from the University of Oxford and a BA from Oberlin College.</p>
+          <p>My primary research agenda is focused on understanding how social policy and contextual stressors influence health and fertility. I develop and employ novel methodology to examine the effects of policies, environments, and events on family outcomes, with emphasis on variation by race/ethnicity and age.</p>
+          <p>Some of my published work estimates the effects of federal funding for sex education on teen birth rates; work in progress estimates the effects of the Great Recession on cohort measures of fertility. In addition to my research on health and fertility, I maintain a secondary focus on racial inequality in education, with particular attention to the links between the educational and criminal justice systems. Recent projects explore the effects of contact with the police on student outcomes, and the role of school choice systems in the unequal distribution of students to schools.</p>
+          <p>Before entering academia I taught seventh and eighth grade in New Orleans. I received my Ph.D. from New York University in 2023 and joined the University of Wisconsin–Madison faculty that same year.</p>
         </div>
       </div>
     </div>
@@ -135,65 +147,208 @@
   <!-- PUBLICATIONS -->
   <div id="publications" class="page">
     <div class="section">
-      <div class="section-label"><span>Books</span></div>
+      <div class="section-label">Peer-Reviewed Articles</div>
       <ul class="pub-list">
         <li class="pub-item">
-          <span class="pub-year">2021</span>
+          <span class="pub-num">20</span>
           <div>
-            <div class="pub-title">The Uncertain Archive: Sociology, Evidence, and the Mid-Century Social Imagination</div>
-            <div class="pub-meta">University of Westbrook Press &nbsp;·&nbsp; <em>Braudel Prize, 2022</em></div>
+            <div class="pub-title">A Research Note on Race, Ethnicity, and Infant Outcomes Following Unintended Pregnancies</div>
+            <div class="pub-meta"><em>Demography</em> <span class="pub-tag forthcoming">forthcoming</span></div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">19</span>
+          <div>
+            <div class="pub-title">The Effect of the Great Recession and its Aftermath on U.S. Fertility: Causal Estimates from a Cohort Discontinuity Design</div>
+            <div class="pub-meta">Wu, L.L., Mark, N.D., and Hill, J. &nbsp;·&nbsp; <em>Demography</em> <span class="pub-tag forthcoming">forthcoming</span></div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">18</span>
+          <div>
+            <div class="pub-title">Severe Tornadoes and Infant Birth Weight in the US</div>
+            <div class="pub-meta">Mark, N.D., Raker, E., and Torrats-Espinosa, G. &nbsp;·&nbsp; <em>Demography</em> (2025)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">17</span>
+          <div>
+            <div class="pub-title">Male Twin Live Births Following Unconditional Cash Transfers in Alaska: A Time-Series Analysis</div>
+            <div class="pub-meta">Singh, P., Mark, N.D., and Cowan, S. &nbsp;·&nbsp; <em>Twin Research and Human Genetics</em> (2025)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">16</span>
+          <div>
+            <div class="pub-title">Fear among Hispanic and Non-Hispanic White Youth in Texas During a Period of Punitive Immigration Policies (2009–2017)</div>
+            <div class="pub-meta">Mark, N.D., Weitzman, A., &amp; Behrman, J. &nbsp;·&nbsp; <em>Socius</em>, 11 (2024)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">15</span>
+          <div>
+            <div class="pub-title">Reexamining the Causes of Age Patterns in Black-White Birth Weight Disparities: Evidence from US Cohorts</div>
+            <div class="pub-meta"><em>Social Science Research</em>, 123 (2024)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">14</span>
+          <div>
+            <div class="pub-title">Racial/Ethnic Differences in Relationships Between Pregnancy Intentions and Maternal Outcomes</div>
+            <div class="pub-meta"><em>Maternal and Child Health Journal</em> (2024)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">13</span>
+          <div>
+            <div class="pub-title">Exposure to Crime and Racial Birth Outcome Disparities</div>
+            <div class="pub-meta">Mark, N.D. and Torrats-Espinosa, G. &nbsp;·&nbsp; <em>Journal of Urban Health</em> (2024)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">12</span>
+          <div>
+            <div class="pub-title">Is U.S. Fertility Now Below Replacement? Evidence from Period vs. Cohort Measures</div>
+            <div class="pub-meta">Wu, L.L. and Mark, N.D. &nbsp;·&nbsp; <em>Population Research and Policy Review</em>, 42(76) (2023)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">11</span>
+          <div>
+            <div class="pub-title">Choosing Alone? Peer Continuity Disparities in Choice-Based Enrollment Systems</div>
+            <div class="pub-meta">Mark, N.D., Corcoran, S.P., &amp; Jennings, J.L. &nbsp;·&nbsp; <em>Educational Researcher</em>, 52(6) (2023)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">10</span>
+          <div>
+            <div class="pub-title">Pregnancy Intentions' Relationship with Infant, Pregnancy, Maternal, and Early Childhood Outcomes: Evidence from Births in Alaska, Missouri, and Oklahoma</div>
+            <div class="pub-meta">Hobby, E., Mark, N.D., Gemmill, A., Cowan, S. &nbsp;·&nbsp; <em>Perspectives on Sexual and Reproductive Health</em>, 55(1) (2023)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">9</span>
+          <div>
+            <div class="pub-title">Student Absenteeism and the Role of Police Encounters</div>
+            <div class="pub-meta">Geller, A. &amp; Mark, N.D. &nbsp;·&nbsp; <em>Criminology &amp; Public Policy</em>, 21(4) (2023)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">8</span>
+          <div>
+            <div class="pub-title">Adding Insult to Injury: Arrests Reduce Attendance through Institutional Mechanisms</div>
+            <div class="pub-meta">Mark, N.D., Geller, A., and Engberg, J. &nbsp;·&nbsp; <em>Sociology of Education</em>, 95(3) (2022)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">7</span>
+          <div>
+            <div class="pub-title">More Comprehensive Sex Education Reduced Teen Births: Quasi-Experimental Evidence</div>
+            <div class="pub-meta">Mark, N.D. and Wu, L.L. &nbsp;·&nbsp; <em>Proceedings of the National Academy of Sciences</em>, 119(8) (2022)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">6</span>
+          <div>
+            <div class="pub-title">Do Pregnancy Intentions Matter? A Research Note Revisiting Relationships Among Pregnancy, Birth, and Maternal Outcomes</div>
+            <div class="pub-meta">Mark, N.D. and Cowan, S.K. &nbsp;·&nbsp; <em>Demography</em>, 59(1) (2022)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">5</span>
+          <div>
+            <div class="pub-title">Declining Violence and Improving Birth Outcomes in the US: Evidence from Birth Certificate Data</div>
+            <div class="pub-meta">Mark, N.D. and Torrats-Espinosa, G. &nbsp;·&nbsp; <em>Social Science and Medicine</em>, 294 (2022)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">4</span>
+          <div>
+            <div class="pub-title">Whither Weathering? The Variable Significance of Age in Black-White Low Birth Weight Disparities</div>
+            <div class="pub-meta"><em>Social Science and Medicine – Population Health</em> (2021)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">3</span>
+          <div>
+            <div class="pub-title">COVID-19 Vaccine Hesitancy Is the New Terrain for Political Division among Americans</div>
+            <div class="pub-meta">Cowan, S.K., Mark, N.D., &amp; Reich, J.A. &nbsp;·&nbsp; <em>Socius</em>, 7 (2021)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">2</span>
+          <div>
+            <div class="pub-title">Sexual Abstinence in the United States: Cohort Trends in Abstaining from Sex While Never Married for US Women Born 1938 to 1983</div>
+            <div class="pub-meta">Wu, L.L., Martin, S.P., England, P., &amp; Mark, N.D. &nbsp;·&nbsp; <em>Socius</em>, 6 (2020)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">1</span>
+          <div>
+            <div class="pub-title">Could We Level the Playing Field? Long-Acting Reversible Contraceptives, Nonmarital Fertility, and Poverty in the United States</div>
+            <div class="pub-meta">Wu, L.L. &amp; Mark, N.D. &nbsp;·&nbsp; <em>RSF: The Russell Sage Foundation Journal of the Social Sciences</em>, 4(3) (2018)</div>
           </div>
         </li>
       </ul>
     </div>
+
     <div class="section">
-      <div class="section-label"><span>Articles &amp; Chapters</span></div>
+      <div class="section-label">Working Papers</div>
       <ul class="pub-list">
         <li class="pub-item">
-          <span class="pub-year">2024</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">Witness Knowledge: Expertise and Credibility in Postwar American Courts</div>
-            <div class="pub-meta"><em>Journal of Modern History</em>, 96(2), 412–448 <span class="pub-tag">peer reviewed</span></div>
+            <div class="pub-title">Housing Costs and U.S. Fertility: A New Era</div>
+            <div class="pub-meta">Mark, N.D., Adamson, C., and Besbris, M. (2026)</div>
           </div>
         </li>
         <li class="pub-item">
-          <span class="pub-year">2023</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">Against Neutrality: Value Commitments in Mid-Century Social Science</div>
-            <div class="pub-meta"><em>Theory and Society</em>, 52(4), 601–631 <span class="pub-tag">peer reviewed</span></div>
+            <div class="pub-title">Eventful Inequality: A Sociological Approach to Continuity and Change in US Infant Health Disparities</div>
+            <div class="pub-meta">Mark, N.D. and Torrats-Espinosa, G. (2025)</div>
           </div>
         </li>
         <li class="pub-item">
-          <span class="pub-year">2022</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">The Methodological Imagination, Revisited</div>
-            <div class="pub-meta">In <em>Rethinking the Human Sciences</em>, ed. P. Brennan &amp; A. Cole. Chicago: Aldine. pp. 77–104 <span class="pub-tag">chapter</span></div>
+            <div class="pub-title">Is the Decline in Fertility Due to a Decline in Partnership? A Decomposition Approach</div>
+            <div class="pub-meta">Mark, N.D., Jeong, W., and England, P. (2026)</div>
           </div>
         </li>
         <li class="pub-item">
-          <span class="pub-year">2020</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">Objectivity's Others: Dissent and the Social Scientific Mainstream, 1955–1975</div>
-            <div class="pub-meta"><em>American Historical Review</em>, 125(3), 887–922 <span class="pub-tag">peer reviewed</span></div>
+            <div class="pub-title">The Effects of 10/7 on Birth Outcomes of Israeli and Palestinian Mothers in California</div>
+            <div class="pub-meta">Moustafa, L. and Mark, N.D. (2026)</div>
           </div>
         </li>
         <li class="pub-item">
-          <span class="pub-year">2018</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">Counting on Certainty: Statistical Authority and its Critics</div>
-            <div class="pub-meta"><em>Historical Studies in the Natural Sciences</em>, 48(1), 55–89 <span class="pub-tag">peer reviewed</span></div>
+            <div class="pub-title">Occupations and Fertility</div>
+            <div class="pub-meta">Jeong, W. and Mark, N.D. (2025)</div>
           </div>
         </li>
-      </ul>
-    </div>
-    <div class="section">
-      <div class="section-label"><span>Under Review &amp; In Progress</span></div>
-      <ul class="pub-list">
         <li class="pub-item">
-          <span class="pub-year">ms.</span>
+          <span class="pub-num">—</span>
           <div>
-            <div class="pub-title">Credibility and Its Discontents: The Expert Witness in American Public Life, 1945–1985</div>
-            <div class="pub-meta">Second monograph, in progress</div>
+            <div class="pub-title">The Covid Pandemic and Cohort Mortality: Causal Estimates from the US and France</div>
+            <div class="pub-meta">Mark, N.D., Aldea-Ramos, N., Guillot, M., and Wu, L. (2026)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">—</span>
+          <div>
+            <div class="pub-title">The Effects of Covid-19 on Cohort Fertility: A Cross-National Comparison</div>
+            <div class="pub-meta">Hwang, S. and Mark, N.D. (2025)</div>
+          </div>
+        </li>
+        <li class="pub-item">
+          <span class="pub-num">—</span>
+          <div>
+            <div class="pub-title">Recent Advances in Difference-in-Differences Methods: What's Broken and What Works</div>
+            <div class="pub-meta">Thomas, K. and Mark, N.D. (2023)</div>
           </div>
         </li>
       </ul>
@@ -203,35 +358,70 @@
   <!-- CV -->
   <div id="cv" class="page">
     <div class="section">
+
       <div class="cv-section">
-        <div class="cv-section-title">Academic Positions</div>
-        <div class="cv-row"><span class="cv-row-year">2020–</span><div class="cv-row-body">Associate Professor of History<small>University of Westbrook</small></div></div>
-        <div class="cv-row"><span class="cv-row-year">2016–20</span><div class="cv-row-body">Assistant Professor of History<small>University of Westbrook</small></div></div>
-        <div class="cv-row"><span class="cv-row-year">2014–16</span><div class="cv-row-body">Postdoctoral Fellow, Society of Fellows<small>Columbia University</small></div></div>
+        <div class="cv-section-title">Academic Employment</div>
+        <div class="cv-row">
+          <span class="cv-row-year">2023–</span>
+          <div class="cv-row-body">Assistant Professor, Sociology
+            <small>University of Wisconsin–Madison</small>
+            <small>Affiliate, Center for Demography and Ecology; Center for Demography of Health and Aging</small>
+          </div>
+        </div>
       </div>
+
       <div class="cv-section">
         <div class="cv-section-title">Education</div>
-        <div class="cv-row"><span class="cv-row-year">2014</span><div class="cv-row-body">DPhil, History of the Social Sciences<small>University of Oxford, Balliol College</small></div></div>
-        <div class="cv-row"><span class="cv-row-year">2008</span><div class="cv-row-body">BA, History &amp; Sociology <em>(summa cum laude)</em><small>Oberlin College</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2023</span><div class="cv-row-body">Ph.D., Sociology<small>New York University</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2018</span><div class="cv-row-body">M.A., Sociology<small>New York University</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2016</span><div class="cv-row-body">M.A., Politics and Education<small>Teachers College, Columbia University</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2011</span><div class="cv-row-body">B.A., Economics; International Studies<small>Johns Hopkins University</small></div></div>
       </div>
+
       <div class="cv-section">
         <div class="cv-section-title">Fellowships &amp; Awards</div>
-        <div class="cv-row"><span class="cv-row-year">2022</span><div class="cv-row-body">Braudel Prize, First Monograph in Historical Sociology</div></div>
-        <div class="cv-row"><span class="cv-row-year">2022</span><div class="cv-row-body">ACLS Fellowship</div></div>
-        <div class="cv-row"><span class="cv-row-year">2019</span><div class="cv-row-body">NEH Summer Stipend</div></div>
-        <div class="cv-row"><span class="cv-row-year">2012–13</span><div class="cv-row-body">Mellon Foundation Dissertation Fellowship</div></div>
+        <div class="cv-row"><span class="cv-row-year">2022</span><div class="cv-row-body">Dean's Dissertation Fellowship<small>NYU Graduate School of Arts and Sciences</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2022</span><div class="cv-row-body">Martinus Nijhoff Award for Science, Technology, and Medicine<small>Horowitz Foundation for Social Policy</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2016–20</span><div class="cv-row-body">IES Predoctoral Interdisciplinary Research Training Fellowship<small>New York University</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2016–21</span><div class="cv-row-body">Henry M. MacCracken Doctoral Fellowship<small>New York University</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2016</span><div class="cv-row-body">NSF Graduate Research Fellowship Program — Honorable Mention</div></div>
       </div>
+
       <div class="cv-section">
-        <div class="cv-section-title">Selected Service</div>
-        <div class="cv-row"><span class="cv-row-year">2023–</span><div class="cv-row-body">Editorial Board, <em>Journal of Modern History</em></div></div>
-        <div class="cv-row"><span class="cv-row-year">2021–</span><div class="cv-row-body">Director of Graduate Studies, Dept. of History</div></div>
+        <div class="cv-section-title">Grants</div>
+        <div class="cv-row"><span class="cv-row-year">2025</span><div class="cv-row-body">Male Partners in Reproductive Health Care (PI)<small>UW–Madison Fall Research Competition ($61,379) · Collaborative for Reproductive Equity ($97,682)</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2024</span><div class="cv-row-body">COVID-19 and Cohort Longevity: Causal Estimates from a Cohort Discontinuity Design (Co-I)<small>NIH Population Dynamics Branch, R21 ($275,000)</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2022</span><div class="cv-row-body">Cumulative (Dis)advantage and the Role of Social Policy in Black-White Infant Health Disparities<small>Horowitz Foundation for Social Policy ($7,500)</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">2021–23</span><div class="cv-row-body">Effects of the Great Recession and its Aftermath on U.S. Fertility<small>NIH Population Dynamics Branch, R03 ($100,000)</small></div></div>
       </div>
-      <a href="cv.pdf" class="cv-download">↓ Download full CV (PDF)</a>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Teaching</div>
+        <div class="cv-row"><span class="cv-row-year">F 2025</span><div class="cv-row-body">Soc 361: Statistics for Sociologists II<small>University of Wisconsin–Madison</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">Sp 2024, 2026</span><div class="cv-row-body">Soc 952: Causal Inference for Observational Data<small>University of Wisconsin–Madison</small></div></div>
+        <div class="cv-row"><span class="cv-row-year">F/Sp 2023–26</span><div class="cv-row-body">Soc 170: Population Problems<small>University of Wisconsin–Madison</small></div></div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Service</div>
+        <div class="cv-row"><span class="cv-row-year">2023–26</span><div class="cv-row-body">Senator, Faculty Senate, UW–Madison</div></div>
+        <div class="cv-row"><span class="cv-row-year">2026</span><div class="cv-row-body">Session Organizer, American Sociological Association</div></div>
+        <div class="cv-row"><span class="cv-row-year">2026</span><div class="cv-row-body">Session Organizer, Population Association of America</div></div>
+        <div class="cv-row"><span class="cv-row-year">2022–26</span><div class="cv-row-body">Discussant, Population Association of America</div></div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Skills &amp; Languages</div>
+        <div class="cv-row"><span class="cv-row-year">Software</span><div class="cv-row-body">Stata, R, LaTeX, ArcGIS, SQL</div></div>
+        <div class="cv-row"><span class="cv-row-year">Languages</span><div class="cv-row-body">English (native) · French (fluent) · Spanish (advanced) · Italian (intermediate) · Arabic (elementary)</div></div>
+      </div>
+
+      <a href="MARK_CV-2026.pdf" class="cv-download">↓ Download full CV (PDF)</a>
     </div>
   </div>
 
   <footer class="footer">
-    <span>Eleanor M. Hartley</span>
+    <span>Nicholas D.E. Mark</span>
     <span>Updated March 2026</span>
   </footer>
 
